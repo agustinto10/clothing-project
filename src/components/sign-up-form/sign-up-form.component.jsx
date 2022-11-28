@@ -38,10 +38,12 @@ const SignUpForm = () => {
         email,
         password
       );
+
       await createUserDocumentFromAuth({
         ...user,
         displayName,
       });
+
       resetFormFields();
     } catch (e) {
       if (e.code === 'auth/email-already-in-use') {
@@ -98,7 +100,9 @@ const SignUpForm = () => {
           required
         />
 
-        <Button type='submit' buttonType='default'>Sign Up</Button>
+        <Button type='submit' buttonType='default'>
+          Sign Up
+        </Button>
       </form>
     </div>
   );
